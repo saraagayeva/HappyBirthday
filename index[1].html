@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday ❤️</title>
+<style>
+body{margin:0;font-family:system-ui;background:#0f0f14;color:#fff;display:flex;justify-content:center}
+.slide{max-width:420px;min-height:100vh;padding:32px;display:none;box-sizing:border-box;text-align:center}
+.active{display:flex;flex-direction:column;justify-content:center}
+button{padding:12px 22px;border:none;border-radius:999px;background:#ff4d88;color:#fff;font-size:1rem}
+img{max-width:100%;border-radius:18px;margin:16px 0}
+.card{background:#1d1d27;padding:18px;border-radius:16px;margin:12px 0}
+</style></head>
+<body>
+<div id="s0" class="slide active">
+<h1>❤️ Happy Birthday ❤️</h1>
+<p>It's officially your day.</p>
+<p>I could've sent you a normal text... but you deserve something made just for you.</p>
+<button onclick="next()">Start</button>
+</div>
+<div id="s1" class="slide">
+<h2>Our Memories 📸</h2>
+<p>Replace the image below with your favourite photo.</p>
+<img src="https://via.placeholder.com/350x450?text=Your+Photo">
+<button onclick="next()">Next</button>
+</div>
+<div id="s2" class="slide">
+<h2>Reasons I Love You ❤️</h2>
+<div class="card" id="reason">Tap below.</div>
+<button onclick="reason()">Reveal</button><br><br>
+<button onclick="next()">Continue</button>
+</div>
+<div id="s3" class="slide">
+<h2>A Letter 💌</h2>
+<p>Replace this with your own birthday letter.</p>
+<button onclick="next()">One last thing...</button>
+</div>
+<div id="s4" class="slide">
+<h1>Happy Birthday 🥹❤️</h1>
+<p>Thank you for being my favourite person. I can't wait to celebrate with you.</p>
+<p style="font-size:3rem">🎉🎂❤️</p>
+</div>
+<script>
+let i=0;
+const slides=[...document.querySelectorAll('.slide')];
+function next(){slides[i].classList.remove('active');i++;slides[i].classList.add('active')}
+const reasons=[
+"Your smile.","The way you make me laugh.","How safe I feel with you.",
+"Your kindness.","Because you're you."
+];
+let r=0;
+function reason(){
+document.getElementById('reason').innerText=reasons[r%reasons.length];r++;
+}
+</script></body></html>
